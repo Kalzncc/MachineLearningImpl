@@ -9,7 +9,7 @@ https://github.com/Kalzncc/SimpleBayesClassifier
 
 ## CART决策树
 ```python
-from decision_tree import Decision_Tree
+from random_forest.model.decision_tree import Decision_Tree
 
 model = Decision_Tree(gini_threshold=0.01, rf_atr_num=-1)
 # gini_threshold  基尼指数阈值，小于此阈值终止划分
