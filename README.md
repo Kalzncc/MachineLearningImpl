@@ -1,5 +1,5 @@
 # MachineLearningImpl
-这里是一些经典机器学习算法的实现，当前更新（ANN，朴素bayes， CART决策树、随机森林）。实现基于C++或者python基本库（python使用numpy和pandas，不使用任何机器学习框架），初学学习之用。
+这里是一些经典机器学习算法的实现，当前更新（ANN，朴素bayes， CART决策树、ID3决策树、随机森林、kNN）。实现基于C++或者python基本库（python使用numpy和pandas，不使用任何机器学习框架），初学学习之用。
 
 ## ANN（基于C++）
 https://github.com/Kalzncc/SimpleANNModel
@@ -42,3 +42,6 @@ model.train(data=data, label=label, dtype=dtype)
 out_label = model.query(sample)
 # 输入一个样例，输出预测标签
 ```
+## ID决策树和kNN算法
+
+https://github.com/Kalzncc/ID3AndKNNImpl
