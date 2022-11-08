@@ -62,6 +62,7 @@ draw_scatter(get_data_div(bel, data, 4), means)
 ```
 
 这里演示聚簇示例
+
 ![image](https://user-images.githubusercontent.com/44296812/200552672-e5e3f832-c564-4e19-85be-120cfab5e58d.png)
 
 
