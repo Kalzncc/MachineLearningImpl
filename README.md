@@ -29,7 +29,7 @@ out_label = model.query(sample)
 ```python
 from random_forest.model.random_forest import Random_Forest
 
-model = Random_Forest(tree_num=10, random_atr_num=3, batch=100)
+model = Random_Forest(tree_num=10, random_atr_num=3, batch=100, gini_threshold=0.3)
 # tree_num        决策树数量
 # random_atr_num  每次随机选取的属性个数
 # batch           每次训练随机选取的样例个数
@@ -42,6 +42,26 @@ model.train(data=data, label=label, dtype=dtype)
 out_label = model.query(sample)
 # 输入一个样例，输出预测标签
 ```
+
+## Kmeans算法
+```python
+from model.kmeans import Kmeans
+from utils.draw import draw_scatter
+from model.kmeans import get_data_div
+
+model = Kmeans(k=4)
+# K为分簇个数
+
+bel, means = model.train(data)
+# bel为每个数据的所属类
+# means为每个簇的中心
+
+
+draw_scatter(get_data_div(bel, data, 4), means)
+#画散点图示例
+```
+
+
 ## ID决策树和kNN算法
 
 https://github.com/Kalzncc/ID3AndKNNImpl
