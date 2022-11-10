@@ -92,7 +92,7 @@ draw_scatter(get_data_div(bel, data, 4), means)
 
 公式推定：https://blog.csdn.net/qq_35802619/article/details/127075123
 
-这里吐槽一下，这个东西是真的难啊。
+这里吐槽一下，这个东西是真的难啊。一度想要放弃，不过最后还是推出来并实现出来了。
 
 ```python
 from model.support_vector_machine import Support_Vector_Machine
@@ -114,7 +114,20 @@ label = np.array([-1 if i == 0 else 1 for i in label])
 draw_div_line(data, label, min_x=-5, max_x=15, min_y=-5, max_y=15, query=svm.query, sv=svm.sv)
 # 画分割线图表
 ```
+有关核函数，在<a href="https://github.com/Kalzncc/MachineLearningImpl/blob/master/svm/model/kernel_func.py">model.kernel_func.py</a>有示例，核函数需要定义run方法，传入两个等维度numpy向量，输出一个标量值。这里示例创建一个sigma为1.0的高斯核函数。
+```python
+# main.py
+from svm.model.kernel_func import Gauss_Kernel
+svm = Support_Vector_Machine(max_round=10, kernel_func=Gauss_Kernel(sigma=1.0))
 
+# svm.model.kernel_func.py
+class Gauss_Kernel:
+    def __init__(self, sigma):
+        self.sigma = sigma
+
+    def run(self, x, y):
+        return math.exp(-sum((x - y) * (x - y)) / (2 * self.sigma * self.sigma))
+```
 下面是示例，这里带有红色x的样本是支持向量
 ![image](https://user-images.githubusercontent.com/44296812/201076329-6d62d024-4212-454c-8bd4-4cb6c0feb8d7.png)
 
