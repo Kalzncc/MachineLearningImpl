@@ -9,14 +9,20 @@
 > <a href="#rf">随机森林 </a>\
 > <a href="#knn">kNN </a>\
 > <a href="#kmeans">Kmeans </a> \
-> <a href="svm">SVM</a>
+> <a href="#svm">SVM</a>
+
 <a id="ann"/>
+
 ## ANN（基于C++）
 https://github.com/Kalzncc/SimpleANNModel
+
 <a id="bys"/>
+
 ## 朴素bayes（基于C++）
 https://github.com/Kalzncc/SimpleBayesClassifier
+
 <a id="cart"/>
+
 ## CART决策树
 ```python
 from random_forest.model.decision_tree import Decision_Tree
@@ -82,7 +88,7 @@ draw_scatter(get_data_div(bel, data, 4), means)
 
 <a id="svm"/>
 
-# SVM 基于SMO算法
+## SVM 基于SMO算法
 
 公式推定：https://blog.csdn.net/qq_35802619/article/details/127075123
 
