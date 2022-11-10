@@ -100,8 +100,6 @@ class Support_Vector_Machine:
             a2_index = random.randint(0, label.shape[0] - 1)
             while a2_index == a1_index:
                 a2_index = random.randint(0, label.shape[0] - 1)
-            _alpha_swap(a, data, label, 1, a2_index)
-            errors[1], errors[a2_index] = errors[a2_index], errors[1]
             sus = sus or self._optimize(a, b, data, label, a1_index, a2_index)
 
         return not sus
