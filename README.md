@@ -103,6 +103,7 @@ from utils.draw import draw_div_line
 svm = Support_Vector_Machine(max_round, delta_alpha_threshold, c, kkt_tolerance, kernel_func)
 # max_round             最大优化轮次
 # delta_alpha_threshold 优化alpha时的最小变化阈值（变化小于此阈值时视为优化失败）
+# c                     软间隔松弛参数，默认极大值
 # kkt_tolerance         kkt条件容忍程度阈值（辨别时依据此阈值判定一变量是否满足kkt）
 # kernel_func           核函数， 在model.kernel_func.py中定义了一些核函数示例，可以参考。默认为线性核
 
