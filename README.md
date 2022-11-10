@@ -88,7 +88,7 @@ draw_scatter(get_data_div(bel, data, 4), means)
 
 <a id="svm"/>
 
-# SVM 基于SMO算法
+## SVM 基于SMO算法
 
 公式推定：https://blog.csdn.net/qq_35802619/article/details/127075123
 
