@@ -1,12 +1,22 @@
 # MachineLearningImpl
-这里是一些经典机器学习算法的实现，当前更新（ANN，朴素bayes， CART决策树、ID3决策树、随机森林、kNN、Kmeans）。实现基于C++或者python基本库（python使用numpy和pandas，不使用任何机器学习框架），初学学习之用。
+这里是一些经典机器学习算法的实现。实现基于C++或者python基本库（python使用numpy和pandas，不使用任何机器学习框架），初学学习之用。
 
+当前更新：
+> <a href="#ann">ANN</a> \
+> <a href="#bys">朴素bayes</a>  
+> <a href="#cart">CART决策树</a> \
+> <a href="#id3">ID3决策树 </a>\
+> <a href="#rf">随机森林 </a>\
+> <a href="#knn">kNN </a>\
+> <a href="#kmeans">Kmeans </a> \
+> <a href="svm">SVM</a>
+<a id="ann"/>
 ## ANN（基于C++）
 https://github.com/Kalzncc/SimpleANNModel
-
+<a id="bys"/>
 ## 朴素bayes（基于C++）
 https://github.com/Kalzncc/SimpleBayesClassifier
-
+<a id="cart"/>
 ## CART决策树
 ```python
 from random_forest.model.decision_tree import Decision_Tree
@@ -25,6 +35,8 @@ out_label = model.query(sample)
 # 输入一个样例，输出预测标签
 ```
 
+<a id="rf"/>
+
 ## 随机森林
 ```python
 from random_forest.model.random_forest import Random_Forest
@@ -42,6 +54,8 @@ model.train(data=data, label=label, dtype=dtype)
 out_label = model.query(sample)
 # 输入一个样例，输出预测标签
 ```
+
+<a id="kmeans"/>
 
 ## Kmeans算法
 ```python
@@ -64,6 +78,9 @@ draw_scatter(get_data_div(bel, data, 4), means)
 这里演示聚簇示例
 
 ![image](https://user-images.githubusercontent.com/44296812/200552672-e5e3f832-c564-4e19-85be-120cfab5e58d.png)
+
+
+<a id="svm"/>
 
 # SVM 基于SMO算法
 
@@ -94,7 +111,9 @@ draw_div_line(data, label, min_x=-5, max_x=15, min_y=-5, max_y=15, query=svm.que
 下面是示例，这里带有红色x的样本是支持向量
 ![image](https://user-images.githubusercontent.com/44296812/201076329-6d62d024-4212-454c-8bd4-4cb6c0feb8d7.png)
 
+<a id="id3"/>
+<a id="knn"/>
 
-## ID决策树和kNN算法
+## ID3决策树和kNN算法
 
 https://github.com/Kalzncc/ID3AndKNNImpl
