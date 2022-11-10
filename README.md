@@ -65,6 +65,35 @@ draw_scatter(get_data_div(bel, data, 4), means)
 
 ![image](https://user-images.githubusercontent.com/44296812/200552672-e5e3f832-c564-4e19-85be-120cfab5e58d.png)
 
+# SVM 基于SMO算法
+
+公式推定：https://blog.csdn.net/qq_35802619/article/details/127075123
+
+这里吐槽一下，这个东西是真的难啊。
+
+```python
+from model.support_vector_machine import Support_Vector_Machine
+from utils.utils import read_data
+import model.kernel_func as kf
+from utils.draw import draw_div_line
+
+svm = Support_Vector_Machine(max_round, delta_alpha_threshold, c, kkt_tolerance, kernel_func)
+# max_round             最大优化轮次
+# delta_alpha_threshold 优化alpha时的最小变化阈值（变化小于此阈值时视为优化失败）
+# kkt_tolerance         kkt条件容忍程度阈值（辨别时依据此阈值判定一变量是否满足kkt）
+# kernel_func           核函数， 在model.kernel_func.py中定义了一些核函数示例，可以参考。默认为线性核
+
+svm.train(data, label)
+# data, label 分别是numpy数组格式的数据和对应的label，应为二分类，label只有0，1两种标签
+
+label = np.array([-1 if i == 0 else 1 for i in label])
+draw_div_line(data, label, min_x=-5, max_x=15, min_y=-5, max_y=15, query=svm.query, sv=svm.sv)
+# 画分割线图表
+```
+
+下面是示例，这里带有红色x的样本是支持向量
+![image](https://user-images.githubusercontent.com/44296812/201076329-6d62d024-4212-454c-8bd4-4cb6c0feb8d7.png)
+
 
 ## ID决策树和kNN算法
 
