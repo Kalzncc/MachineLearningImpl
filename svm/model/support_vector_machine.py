@@ -18,6 +18,7 @@ class Support_Vector_Machine:
         self.sv_a = None
         self.sv_b = None
 
+        # 以下变量仅用于调试
         self.a = None
         self.b = None
         self.y = None
@@ -128,6 +129,7 @@ class Support_Vector_Machine:
         b[0] = (b0 + b1) / 2
         return True
 
+    # 此方法仅用于调试，输出中间结果
     def pre_query(self, sample):
         wx = sum([self.a[i] * self.y[i] * self.kernel_func.run(self.v[i], sample) for i in
                   range(0, self.a.shape[0])])
