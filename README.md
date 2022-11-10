@@ -114,7 +114,7 @@ label = np.array([-1 if i == 0 else 1 for i in label])
 draw_div_line(data, label, min_x=-5, max_x=15, min_y=-5, max_y=15, query=svm.query, sv=svm.sv)
 # 画分割线图表
 ```
-有关核函数，在<a href="https://github.com/Kalzncc/MachineLearningImpl/blob/master/svm/model/kernel_func.py">model.kernel_func.py</a>有示例，核函数需要定义run方法，传入两个等维度向量，输出一个标量值。这里示例创建一个sigma为1.0的高斯核函数。
+有关核函数，在<a href="https://github.com/Kalzncc/MachineLearningImpl/blob/master/svm/model/kernel_func.py">model.kernel_func.py</a>有示例，核函数需要定义run方法，传入两个等维度numpy向量，输出一个标量值。这里示例创建一个sigma为1.0的高斯核函数。
 ```python
 # main.py
 from svm.model.kernel_func import Gauss_Kernel
