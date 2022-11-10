@@ -1,21 +1,7 @@
 import math
 import random
-
 import svm.model.kernel_func as kf
 import numpy as np
-from utils.draw import draw_div_line
-
-
-def _alpha_swap(a, data, label, id1, id2):
-    a[id1], a[id2] = a[id2], a[id1]
-    data[[id1, id2]] = data[[id2, id1]]
-    label[id1], label[id2] = label[id2], label[id1]
-
-
-def _init_alpha(label):
-    label_size = np.bincount(label)
-    a = np.zeros(shape=label.shape)
-    return np.array(a)
 
 
 class Support_Vector_Machine:
@@ -152,7 +138,7 @@ class Support_Vector_Machine:
         b = [0]
         cur_round = 0
         while not stop_flag and cur_round < self.max_round:
-            stop_flag = self._select_a(a, b, data, label, True)
+            self._select_a(a, b, data, label, True)
             stop_flag = self._select_a(a, b, data, label, False)
             cur_round += 1
         return b
@@ -160,7 +146,7 @@ class Support_Vector_Machine:
     def train(self, o_data, o_label):
         data = o_data.copy()
         label = o_label.copy()
-        a = _init_alpha(label)
+        a = np.zeros(shape=label.shape)
         label = np.array([1 if _ == 1 else -1 for _ in label])
         b = self.smo(a, data, label)
         sv_index = np.where((a != 0) & (a != self.c))
