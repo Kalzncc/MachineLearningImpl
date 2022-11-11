@@ -129,7 +129,15 @@ class Gauss_Kernel:
         return math.exp(-sum((x - y) * (x - y)) / (2 * self.sigma * self.sigma))
 ```
 下面是示例，这里带有红色x的样本是支持向量
+
+线性核拟合
+
 ![image](https://user-images.githubusercontent.com/44296812/201076329-6d62d024-4212-454c-8bd4-4cb6c0feb8d7.png)
+
+高斯核拟合二次函数
+
+![image](https://user-images.githubusercontent.com/44296812/201328486-5fda60fa-7a61-40b2-b453-3a7ed05315b1.png)
+
 
 <a id="id3"/>
 <a id="knn"/>
