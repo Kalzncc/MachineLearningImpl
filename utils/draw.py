@@ -17,7 +17,7 @@ def draw_scatter(data_set, means):
     plt.show()
 
 
-def draw_div_line(data, label, min_x, max_x, min_y, max_y, query, step=0.1, threshold=0.01, sv=None):
+def draw_div_line(data, label, min_x, max_x, min_y, max_y, query=None, step=0.1, threshold=0.01, sv=None):
     data1 = data[label == -1]
     data2 = data[label == 1]
     data_set = [data1, data2]

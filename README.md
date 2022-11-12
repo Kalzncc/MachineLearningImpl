@@ -110,6 +110,9 @@ svm = Support_Vector_Machine(max_round, delta_alpha_threshold, c, kkt_tolerance,
 svm.train(data, label)
 # data, label 分别是numpy数组格式的数据和对应的label，应为二分类，label只有0，1两种标签
 
+svm.query(sample)
+# 询问样例标签，输入为一个数值，为原f函数输出，如果值小于0应划分至-1，如果值大于0应划分至1
+
 label = np.array([-1 if i == 0 else 1 for i in label])
 draw_div_line(data, label, min_x=-5, max_x=15, min_y=-5, max_y=15, query=svm.query, sv=svm.sv)
 # 画分割线图表

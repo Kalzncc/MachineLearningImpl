@@ -14,10 +14,10 @@ def generate_data():
         for _ in range(0, 100):
             x = random.random() * 10
             y = random.random() * 10
-            if y > 0.82 * x + 3.2:
+            if y > 0.8 * x * x - 7.2 * x + 19:
                 label = 0
                 fd.write(str(x) + ',' + str(y) + ',' + str(label) + '\n')
-            elif y < 0.82 * x + -1.2:
+            elif y < 0.8 * x * x - 7.2 * x + 15:
                 label = 1
                 fd.write(str(x) + ',' + str(y) + ',' + str(label) + '\n')
 
@@ -25,16 +25,16 @@ def generate_data():
         for _ in range(0, 100):
             x = random.random() * 10
             y = random.random() * 10
-            if y > 0.82 * x + 3.2:
+            if y > 0.8 * x * x - 7.2 * x + 19:
                 label = 0
                 fd.write(str(x) + ',' + str(y) + ',' + str(label) + '\n')
-            elif y < 0.82 * x + -1.2:
+            elif y < 0.8 * x * x - 7.2 * x + 15:
                 label = 1
                 fd.write(str(x) + ',' + str(y) + ',' + str(label) + '\n')
 
 
 def run_svm():
-    svm = Support_Vector_Machine(max_round=20, kernel_func=kf.Poly_Kernel(d=1))
+    svm = Support_Vector_Machine(max_round=20, kernel_func=kf.Gauss_Kernel(sigma=1))
     data, label, dtype = read_data("../data/data.csv", "../data/type.csv")
 
     svm.train(data, label)
@@ -58,5 +58,8 @@ def run_svm():
 
 
 if __name__ == '__main__':
-    generate_data()
+    # generate_data()
+    data, label, dtype = read_data("../data/data.csv", "../data/type.csv")
+    label = np.array([-1 if i == 0 else 1 for i in label])
+    draw_div_line(data, label, -5, 15, -5, 15)
     run_svm()
