@@ -90,7 +90,7 @@ draw_scatter(get_data_div(bel, data, 4), means)
 
 ## SVM 基于SMO算法
 
-公式推定：https://blog.csdn.net/qq_35802619/article/details/127075123
+公式推定：https://kalzncc.github.io/2022/11/19/smo/
 
 这里吐槽一下，这个东西是真的难啊。一度想要放弃，不过最后还是推出来并实现出来了。
 
